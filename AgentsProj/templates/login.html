@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGENT LOGIN</title>
+</head>
+<body>
+    <h1>Agent LOGIN</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        Agent ID: <input type="number" placeholder="Enter Agent ID" name="id" />
+        Agent Password: <input type="password" placeholder="Enter password" name="password" />
+        <input type="submit" value="login agent"/>
+    </form>
+</body>
+</html>

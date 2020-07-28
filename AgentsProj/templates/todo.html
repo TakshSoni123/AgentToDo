@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO LIST</title>
+</head>
+<body>
+<h>To do list</h>
+<hr/>
+    <h2>Add to list</h2>
+    <form method="post">
+        {% csrf_token %}
+        Agent ID: <input type="number", name="id"/><br>
+    Title: <input type="text" name="title"/><br>
+    Description: <input type="text" name="desc"/><br>
+    Date: <input type="date" name="date"/><br>
+    <input type="submit" value="Add todo"/>
+    </form>
+    <br>
+    <br>
+    {% for i in query %}
+    {% if i.agent_id == id  %}
+    <p> {{ i.title }}</p>
+    <p>{{ i.desc }}</p>
+    <p> {{ i.date }}</p>
+    {% endif %}
+    <br>
+    {% endfor %}</body>
+</html>
